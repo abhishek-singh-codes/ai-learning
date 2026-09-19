@@ -63,15 +63,14 @@ response = client.responses.create(
     input=user_input,
     tools=tools
 )
-
-print(response.output)
-
-
 # --------------------
 # Agent loop
 # --------------------
 
 while True:
+
+    for item in response.output:
+        print("\nResponse Item:", item)
 
     tool_calls = [
         item
